@@ -3,14 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Buy, sell, and rent properties and land with ease. Discover homes, apartments, and plots tailored to your needs.">
+    <title>EstateHub — Buy, Sell, Rent Homes & Land</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p>This is a change</p>
-    <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-    </ul>
+    <header class="site-header">
+        <div class="container nav">
+            <a href="#" class="brand">EstateHub</a>
+            <nav class="nav-links" id="primaryNav">
+                <a href="#buy">Buy</a>
+                <a href="#sell">Sell</a>
+                <a href="#rent">Rent</a>
+                <a href="#land">Land</a>
+                <a href="#listings">Listings</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="btn btn-primary btn-list" id="listPropertyBtn">List Your Property</button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-copy">
+                    <h1>Buy, Sell, Rent Homes & Land — all in one place</h1>
+                    <p>Find your next home, list your property, or explore land opportunities across the city and beyond.</p>
+                    <form class="search" id="searchForm">
+                        <div class="search-row">
+                            <input type="text" id="searchLocation" placeholder="Search by city, neighborhood, or ZIP" aria-label="Location">
+                            <select id="searchPurpose" aria-label="Purpose">
+                                <option value="buy" selected>Buy</option>
+                                <option value="rent">Rent</option>
+                                <option value="land">Land</option>
+                            </select>
+                            <select id="searchType" aria-label="Property type">
+                                <option value="any" selected>Any type</option>
+                                <option value="house">House</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="land">Land</option>
+                                <option value="commercial">Commercial</option>
+                            </select>
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </div>
+                        <div class="search-row meta">
+                            <label>
+                                <span>Min price</span>
+                                <select id="minPrice">
+                                    <option value="0" selected>Any</option>
+                                    <option value="50000">$50k</option>
+                                    <option value="100000">$100k</option>
+                                    <option value="250000">$250k</option>
+                                    <option value="500000">$500k+</option>
+                                </select>
+                            </label>
+                            <label>
+                                <span>Max price</span>
+                                <select id="maxPrice">
+                                    <option value="any" selected>Any</option>
+                                    <option value="250000">$250k</option>
+                                    <option value="500000">$500k</option>
+                                    <option value="1000000">$1M</option>
+                                    <option value="2000000">$2M+</option>
+                                </select>
+                            </label>
+                            <label class="beds" aria-label="Bedrooms">
+                                <span>Beds</span>
+                                <select id="beds">
+                                    <option value="any" selected>Any</option>
+                                    <option value="1">1+</option>
+                                    <option value="2">2+</option>
+                                    <option value="3">3+</option>
+                                    <option value="4">4+</option>
+                                </select>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories container" id="categories">
+            <h2>Everything real estate, simplified</h2>
+            <div class="grid grid-5">
+                <a class="category-card reveal" id="buy" href="#listings">
+                    <div class="icon">🏠</div>
+                    <h3>Buy Properties</h3>
+                    <p>Explore verified homes and apartments across top neighborhoods.</p>
+                </a>
+                <a class="category-card reveal" id="sell" href="#cta-sell">
+                    <div class="icon">💼</div>
+                    <h3>Sell Properties</h3>
+                    <p>List your home with expert guidance and reach serious buyers.</p>
+                </a>
+                <a class="category-card reveal" id="rent" href="#listings">
+                    <div class="icon">🛋️</div>
+                    <h3>Rent</h3>
+                    <p>Find rentals that match your budget and lifestyle.</p>
+                </a>
+                <a class="category-card reveal" id="land" href="#listings">
+                    <div class="icon">🌳</div>
+                    <h3>Buy Land</h3>
+                    <p>Discover residential and commercial plots ready for development.</p>
+                </a>
+                <a class="category-card reveal" href="#cta-sell">
+                    <div class="icon">🧭</div>
+                    <h3>Sell Land</h3>
+                    <p>Get fair market valuations and close with confidence.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="featured" id="listings">
+            <div class="container">
+                <h2>Featured listings</h2>
+                <div class="grid grid-3">
+                    <article class="listing-card reveal">
+                        <div class="media" aria-label="Property image" role="img"></div>
+                        <div class="details">
+                            <h3>Modern 3BR Family Home</h3>
+                            <p class="muted">Austin, TX</p>
+                            <ul class="stats">
+                                <li>3 Beds</li>
+                                <li>2 Baths</li>
+                                <li>1,850 sqft</li>
+                            </ul>
+                            <div class="price-row">
+                                <span class="price">$489,000</span>
+                                <button class="btn btn-secondary">View</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="listing-card reveal">
+                        <div class="media media-2" aria-label="Property image" role="img"></div>
+                        <div class="details">
+                            <h3>Luxury Downtown Apartment</h3>
+                            <p class="muted">Seattle, WA</p>
+                            <ul class="stats">
+                                <li>2 Beds</li>
+                                <li>2 Baths</li>
+                                <li>1,240 sqft</li>
+                            </ul>
+                            <div class="price-row">
+                                <span class="price">$3,100/mo</span>
+                                <button class="btn btn-secondary">View</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="listing-card reveal">
+                        <div class="media media-3" aria-label="Property image" role="img"></div>
+                        <div class="details">
+                            <h3>2 Acre Residential Plot</h3>
+                            <p class="muted">Reno, NV</p>
+                            <ul class="stats">
+                                <li>Land</li>
+                                <li>Flat terrain</li>
+                                <li>Utilities nearby</li>
+                            </ul>
+                            <div class="price-row">
+                                <span class="price">$210,000</span>
+                                <button class="btn btn-secondary">View</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-outline">Browse all listings</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works container" id="how">
+            <h2>How it works</h2>
+            <div class="grid grid-3 steps">
+                <div class="step reveal">
+                    <div class="step-num">1</div>
+                    <h3>Tell us what you need</h3>
+                    <p>Share your goals for buying, renting, or selling, and we tailor the journey.</p>
+                </div>
+                <div class="step reveal">
+                    <div class="step-num">2</div>
+                    <h3>Get expert guidance</h3>
+                    <p>Receive curated options and support from experienced local agents.</p>
+                </div>
+                <div class="step reveal">
+                    <div class="step-num">3</div>
+                    <h3>Close with confidence</h3>
+                    <p>From tours to paperwork, we streamline the process end-to-end.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-sell" id="cta-sell">
+            <div class="container cta">
+                <h2>Sell your property fast</h2>
+                <p>Get a free valuation, professional photos, and listing on top portals.</p>
+                <div class="actions">
+                    <button class="btn btn-primary" id="ctaValuationBtn">Get a free valuation</button>
+                    <button class="btn btn-outline" id="ctaTalkBtn">Talk to an expert</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials container" id="testimonials">
+            <h2>Loved by buyers, sellers, and renters</h2>
+            <div class="grid grid-2">
+                <blockquote class="quote reveal">
+                    “The process was so smooth. We sold above asking in just 10 days!”
+                    <cite>— Priya S.</cite>
+                </blockquote>
+                <blockquote class="quote reveal">
+                    “Fantastic rental options and responsive support. Highly recommend.”
+                    <cite>— David K.</cite>
+                </blockquote>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="container footer-grid">
+            <div>
+                <a href="#" class="brand">EstateHub</a>
+                <p class="muted">Your trusted partner for buying, selling, and renting homes and land.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#buy">Buy</a></li>
+                    <li><a href="#rent">Rent</a></li>
+                    <li><a href="#land">Land</a></li>
+                    <li><a href="#sell">Sell</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#how">How it works</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Get in touch</h4>
+                <ul>
+                    <li><a href="mailto:hello@estatehub.example">hello@estatehub.example</a></li>
+                    <li><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container small muted copyright">© <span id="year"></span> EstateHub. All rights reserved.</div>
+    </footer>
+
+    <script src="app.js"></script>
+    <noscript>Enable JavaScript for the best experience.</noscript>
 </body>
 </html>
